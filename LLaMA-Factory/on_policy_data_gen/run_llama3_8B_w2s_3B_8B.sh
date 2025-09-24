@@ -15,7 +15,7 @@ echo ">>> [Step 1] Running SFT training with LLaMAFactory"
 cd ../
 CUDA_VISIBLE_DEVICES=0,1,2,3 llamafactory-cli train "$SFT_CONFIG"
 
-# ----------- Step 2: 运行 decode.py -----------
+# ----------- Step 2: decode.py -----------
 echo ">>> [Step 2] Decoding with model: $MODEL_PATH"
 cd on_policy_data_gen/
 python decode.py \
@@ -24,7 +24,7 @@ python decode.py \
   --seed "$SEED" \
   --output_dir "$OUTPUT_DIR"
 
-# ----------- Step 3: 构建 pairwise DPO 格式数据 -----------
+# ----------- Step 3: pairwise data -----------
 echo ">>> [Step 3] Creating DPO pairwise data"
 python create_pairwise_data.py \
   --sft_file "$PROMPT_FILE" \
