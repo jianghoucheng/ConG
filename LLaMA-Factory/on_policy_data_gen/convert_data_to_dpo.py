@@ -1,38 +1,54 @@
 import json
+import argparse
 import os
 
-# 输入文件路径
-input_path = "datasets/Llama3.2-3B-Instruct/all_outputs_bin.json"
 
-# 输出文件路径
-output_dpo_path = "../data/ultrafeedback_Llama3.2_3B.json"
+def main():
+    parser = argparse.ArgumentParser(description="Convert outputs to DPO format")
+    parser.add_argument(
+        "--input_path",
+        type=str,
+        required=True,
+        help="Path to input JSON file (e.g., datasets/Llama3.2-3B-Instruct/all_outputs_bin.json)"
+    )
+    parser.add_argument(
+        "--output_path",
+        type=str,
+        required=True,
+        help="Path to save DPO-format JSON file (e.g., ../data/ultrafeedback_Llama3.2_3B.json)"
+    )
+    args = parser.parse_args()
 
-dpo_data = []
-sft_data = []
+    input_path = args.input_path
+    output_path = args.output_path
 
-with open(input_path, 'r', encoding='utf-8') as f:
-    data = json.load(f)
+    dpo_data = []
 
-for item in data:
-    try:
-        prompt = item["prompt"]
-        chosen_text = item["chosen"][1]["content"]
-        rejected_text = item["rejected"][1]["content"]
+    with open(input_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
 
-        # ✅ DPO 格式
-        dpo_data.append({
-            "prompt": prompt.strip(),
-            "chosen": chosen_text.strip(),
-            "rejected": rejected_text.strip()
-        })
+    for item in data:
+        try:
+            prompt = item["prompt"]
+            chosen_text = item["chosen"][1]["content"]
+            rejected_text = item["rejected"][1]["content"]
+
+            dpo_data.append({
+                "prompt": prompt.strip(),
+                "chosen": chosen_text.strip(),
+                "rejected": rejected_text.strip()
+            })
+
+        except Exception as e:
+            print(f"⚠️ Skipped one item due to error: {e}")
+            continue
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    with open(output_path, 'w', encoding='utf-8') as f_dpo:
+        json.dump(dpo_data, f_dpo, ensure_ascii=False, indent=2)
+    print(f"✅ DPO-format data saved to: {output_path}")
 
 
-    except Exception as e:
-        print(f"Skipped one item due to error: {e}")
-        continue
-
-# 保存 DPO 格式
-with open(output_dpo_path, 'w', encoding='utf-8') as f_dpo:
-    json.dump(dpo_data, f_dpo, ensure_ascii=False, indent=2)
-print(f"✅ DPO-format data saved to: {output_dpo_path}")
-
+if __name__ == "__main__":
+    main()
