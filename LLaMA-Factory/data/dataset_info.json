@@ -1,0 +1,114 @@
+{
+  "ultrafeedback": {
+    "hf_hub_url": "llamafactory/ultrafeedback_binarized",
+    "ms_hub_url": "llamafactory/ultrafeedback_binarized",
+    "ranking": true,
+    "columns": {
+      "prompt": "instruction",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "ultrafeedback_qwen2.5_1.5B": {
+  "file_name": "ultrafeedback_qwen2.5_1.5B.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_qwen2.5_7B": {
+  "file_name": "ultrafeedback_qwen2.5_7B.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_qwen2.5_3B": {
+  "file_name": "ultrafeedback_qwen2.5_3B.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_llama3.2_3B": {
+  "file_name": "ultrafeedback_llama3.2_3B.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_qwen2.5_1.5B_dpo_se": {
+  "file_name": "ultrafeedback_qwen2.5_1.5B_dpo_se.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_qwen2.5_3B_dpo_se": {
+  "file_name": "ultrafeedback_qwen2.5_3B_dpo_se.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_llama3.2_3B_dpo_se": {
+  "file_name": "ultrafeedback_llama3.2_3B_dpo_se.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_qwen2.5_1.5B_3B_dpo": {
+  "file_name": "ultrafeedback_qwen2.5_1.5B_3B_dpo.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_qwen2.5_3B_7B_dpo": {
+  "file_name": "ultrafeedback_qwen2.5_3B_7B_dpo.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_llama3_3B_8B_dpo": {
+  "file_name": "ultrafeedback_llama3_3B_8B_dpo.json",
+  "ranking": true,
+  "columns": {
+    "prompt": "prompt",
+    "chosen": "chosen",
+    "rejected": "rejected"
+  }
+  },
+  "ultrafeedback_qwen2.5_1.5B_sft_se": {
+  "file_name": "ultrafeedback_qwen2.5_1.5B_sft_se.json"
+  },
+  "ultrafeedback_qwen2.5_3B_sft_se": {
+  "file_name": "ultrafeedback_qwen2.5_3B_sft_se.json"
+  },
+  "ultrafeedback_qwen2.5_3B_sft": {
+  "file_name": "ultrafeedback_qwen2.5_3B_sft.json"
+  },
+  "ultrafeedback_llama3.2_3B_sft_se": {
+  "file_name": "ultrafeedback_llama3.2_3B_sft_se.json"
+  }
+}
